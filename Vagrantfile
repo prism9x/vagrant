@@ -15,6 +15,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get -y upgrade
-    sudo apt -y install nginx
+    # Install dotnet SDK
+    sudo apt-get -y install dotnet-sdk-6.0 
+    # Install dotnet runtime
+    sudo apt-get -y install dotnet-runtime-6.0 
+
+    sudo apt-get -y install nginx
   SHELL
 end
